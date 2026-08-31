@@ -1,6 +1,9 @@
 {
   "name": "cli-file-manipulate",
-  "version": "1.0.0"
+  "version": "1.0.0",
+  "scripts": {
+    "test": "bun src/main.ts"
+  },
   "module": "index.ts",
   "type": "module",
   "private": true,
