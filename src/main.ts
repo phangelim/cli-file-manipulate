@@ -56,7 +56,19 @@ class fileManager {
       console.error(`Error to Delete the file`);
     };
   }
-  rename() { }
+
+  rename() {
+    const renameFile: string = prompt("Enter the path of the file for rename:")!;
+
+    const newName: string = prompt("Write the new Name:")!;
+
+    try {
+      fs.renameSync(`${renameFile}`, `${newName}`);
+    }
+    catch (error) {
+      console.error(`Error to rename the file ${newName}`);
+    };
+  }
   loop() { }
 }
 
@@ -118,6 +130,11 @@ class Menu {
 
       case 3:
         managerFile.delete();
+        break;
+
+      case 5:
+        managerFile.rename();
+        break;
 
     };
 
