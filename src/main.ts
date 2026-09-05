@@ -33,6 +33,17 @@ class fileManager {
         console.error("Error to create the file");
       };
     }
+
+    else if (num == 2) {
+      const nameFolder: string = prompt("Write the name of folder:")!;
+
+      try {
+        fs.mkdirSync(`${nameFolder}`);
+      }
+      catch (error) {
+        console.error(`Error to create the folder ${nameFolder}`);
+      };
+    };
   }
   delete() { }
   rename() { }
@@ -88,7 +99,11 @@ class Menu {
 
       case 1:
         managerFile.create(answer);
+        break;
 
+      case 2:
+        managerFile.create(answer);
+        break;
     };
 
 
