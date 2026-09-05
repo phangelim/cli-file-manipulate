@@ -51,5 +51,5 @@ cd cli-file-manipulate
 bun install
 
 # run the project
-bun src/index.ts
+bun src/main.ts
 ```
