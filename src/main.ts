@@ -1,33 +1,99 @@
+import * as fs from "node:fs";
+
+
+class fileManager {
+  private fileManager: number = 0;
+
+  constructor(fileManager: number) {
+    this.fileManager = fileManager;
+  };
+
+  listPath(path: string) {
+    const cont: string[] = fs.readdirSync(path);
+
+    for (let i = 0; i <= path.length; i++) {
+      let content = cont[i];
+
+      console.log(content)
+    };
+  }
+
+
+  exitCli() { process.exit(0); };
+
+
+  create(num: number) {
+    if (num == 1) {
+      const extension: string = prompt("Write the ")
+    }
+  }
+  delete() { }
+  rename() { }
+}
+
+
+
+
+
+
+
+
+
+
+
 class Menu {
-  
+
   public showMenu() {
     console.log("CLI FILE MANIPULATE\n");
-  
+
     console.log("SELECT YOUR OPTION\n");;
-  
+
     console.log("1-Create file\n");
-  
+
     console.log("2-Create folder\n");
-  
+
     console.log("3-Delete file or folder\n");
-  
+
     console.log("4-List all\n");
-  
+
     console.log("5-Rename a file or folder\n");
-  
+
     console.log("6-Exit\n");
 
     this.options();
   };
 
   private options() {
-    
+    const answer: number = parseInt(prompt("Write your answer please!!")!);
+
+    const managerFile: fileManager = new fileManager(answer);
+
+    switch (answer) {
+      case 4:
+        const way: string = prompt("Write the path:")!;
+
+        managerFile.listPath(way);
+        break;
+
+      case 6:
+        managerFile.exitCli();
+        break;
+
+      case 1:
+        ss
+
+    };
+
+
+
+
   }
-  
+
 }
 
-const cli_menu: Menu = new Menu();
 
+const cli_menu: Menu = new Menu();
 cli_menu.showMenu();
+
 
 
