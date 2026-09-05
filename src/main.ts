@@ -45,8 +45,19 @@ class fileManager {
       };
     };
   }
-  delete() { }
+
+  delete() {
+    const pathDelete: string = prompt("Write the path to Delete the file:")!;
+
+    try {
+      fs.rmSync(`${pathDelete}`);
+    }
+    catch (error) {
+      console.error(`Error to Delete the file`);
+    };
+  }
   rename() { }
+  loop() { }
 }
 
 
@@ -82,7 +93,7 @@ class Menu {
   };
 
   private options() {
-    const answer: number = parseInt(prompt("Write your answer please!!")!);
+    const answer: number = parseInt(prompt("Write your answer please!!:")!);
 
     const managerFile: fileManager = new fileManager(answer);
 
@@ -104,6 +115,10 @@ class Menu {
       case 2:
         managerFile.create(answer);
         break;
+
+      case 3:
+        managerFile.delete();
+
     };
 
 
