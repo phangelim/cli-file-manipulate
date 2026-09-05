@@ -24,7 +24,14 @@ class fileManager {
 
   create(num: number) {
     if (num == 1) {
-      const extension: string = prompt("Write the ")
+      const file: string = prompt("Write the file with the extension:")!;
+
+      try {
+        fs.writeFileSync(`${file}`, " is created with CLI inside this directory!!!");
+      }
+      catch (error) {
+        console.error("Error to create the file");
+      };
     }
   }
   delete() { }
@@ -80,7 +87,7 @@ class Menu {
         break;
 
       case 1:
-        ss
+        managerFile.create(answer);
 
     };
 
